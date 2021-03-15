@@ -43,7 +43,7 @@ def train(model, base_model, train_data, val_data):
     model.save('Mask_detector_model1') # model will be saved as a keras model which can be loaded using load model function in keras
 
 
-path = r'I:\AI\tf _2021\Mask_Detection\source\dataset'
+path = 'source\dataset'
 model_config, base_model_config = model()
 train_data, val_data = data_generator(path)
 train(model_config, base_model_config, train_data, val_data)
