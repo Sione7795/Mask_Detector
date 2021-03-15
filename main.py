@@ -20,7 +20,7 @@ def data_generator(path_file):
 # and train only the top layers using the dataset
 def model():
     base_model = MobileNetV2(input_tensor=Input(shape=(224, 224, 3)), include_top=False,
-                             weights='source/mobilenet_v2_weights_tf_dim_ordering_tf_kernels_1.0_224_no_top.h5')
+                             weights='imagenet')
     model = AveragePooling2D((7, 7))(base_model.output)
     model = Flatten(name='Flatten')(model)
     model = Dense(128, activation='relu')(model)
@@ -43,7 +43,7 @@ def train(model, base_model, train_data, val_data):
     model.save('Mask_detector_model1') # model will be saved as a keras model which can be loaded using load model function in keras
 
 
-path = 'source\dataset'
+path = 'source\dataset' # download the Dataset from the link 'https://www.kaggle.com/omkargurav/face-mask-dataset' and mention the path to the dataset folder
 model_config, base_model_config = model()
 train_data, val_data = data_generator(path)
 train(model_config, base_model_config, train_data, val_data)
