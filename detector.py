@@ -50,7 +50,7 @@ def predict(image, face_mod, mask_mod):
             cv2.imshow('frame', frame)
 
 
-face_path1 = 'source/face_detector'
+face_path1 = 'face_model'
 mask_path1 = 'Mask_detector_model'
 face_model1, mask_model1 = load_models(face_path1, mask_path1)
 
