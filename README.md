@@ -8,4 +8,3 @@ Run the train.py file.
 ## DETECTION
 After training, detect the live Webcam stream using detector.py file.
 
-## THANK YOU!
